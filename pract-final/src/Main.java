@@ -15,9 +15,12 @@ public class Main {
 
         if (seleccion == 1) {
             calculadora();
+        } else if (seleccion == 2) {
+            clasificador();
         }
 
     }
+
     public static void calculadora() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -42,6 +45,38 @@ public class Main {
         }
     }
 
+    public static void clasificador() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Inserte un numero");
+
+        int num1 = sc.nextInt();
+        int operacion = num1 % 2;
+
+        if (operacion == 0 && num1 >= 0) {
+            System.out.println("El numero " + num1 + " es par");
+            System.out.println("El numero es positivo");
+        } else if (operacion != 0 && num1 >= 0){
+            System.out.println("El numero " + num1 + " es impar");
+            System.out.println("El numero es positivo");
+        } else if (operacion == 0) {
+            System.out.println("El numero " + num1 + " es par");
+            System.out.println("El numero es negativo");
+        } else {
+            System.out.println("El numero " + num1 + " es impar");
+            System.out.println("El numero es negativo");
+        }
+
+    }
+
+    public static void validadorCont() {
+        Scanner sc = new Scanner(System.in);
+
+        String password = sc.nextLine();
+        int caracteres = password.indexOf(password);
+        if (caracteres >= 8) {
+
+        }
+    }
 }
 
 
