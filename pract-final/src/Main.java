@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +18,8 @@ public class Main {
             calculadora();
         } else if (seleccion == 2) {
             clasificador();
+        } else if (seleccion == 3) {
+            validadorCont();
         }
 
     }
@@ -70,11 +73,21 @@ public class Main {
 
     public static void validadorCont() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Prueba");
 
+        char ch;
         String password = sc.nextLine();
-        int caracteres = password.indexOf(password);
-        if (caracteres >= 8) {
+        int caracteres = password.length();
 
+        for (int i = 0; i < caracteres; i++) {
+            ch = password.charAt(i);
+            if (!Character.isUpperCase(ch) && !Character.isLowerCase(ch)) {
+                System.out.println("Contraseña invalida, tiene que contener una mayuscula y una minuscula como minimo.");
+            }
+        }
+
+        if (caracteres >= 8) {
+            System.out.println("Contraseña aceptada");
         }
     }
 }
