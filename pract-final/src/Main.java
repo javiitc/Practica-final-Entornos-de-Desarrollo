@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -73,7 +74,6 @@ public class Main {
 
     public static void validadorCont() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Prueba");
 
         char ch;
         String password = sc.nextLine();
@@ -89,6 +89,15 @@ public class Main {
         if (caracteres >= 8) {
             System.out.println("Contraseña aceptada");
         }
+    }
+
+    public static void numeroRandom () {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+
+        int numAleatorio = Math.random()
     }
 }
 
