@@ -21,6 +21,10 @@ public class Main {
             clasificador();
         } else if (seleccion == 3) {
             validadorCont();
+        } else if (seleccion == 4) {
+            numeroRandom();
+        } else {
+
         }
 
     }
@@ -91,13 +95,25 @@ public class Main {
         }
     }
 
-    public static void numeroRandom () {
+    public static void numeroRandom() {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
-        int x = sc.nextInt();
-        int y = sc.nextInt();
 
-        int numAleatorio = Math.random()
+        System.out.println("Introduzca un rango para generar un numero al azar.");
+
+        int min = sc.nextInt();
+        int max = sc.nextInt();
+
+        int numAleatorio = random.nextInt(min, max);
+
+        System.out.println(numAleatorio);
+
+    }
+
+    public static void contadorPalabras() {
+        Scanner sc = new Scanner(System.in);
+        String texto = sc.nextLine();
+        
     }
 }
 
