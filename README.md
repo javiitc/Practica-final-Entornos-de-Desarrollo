@@ -21,6 +21,6 @@ El programa incluye un sistema de menú que permite a los usuarios elegir entre 
 ## Desarrollo en Equipo
 En equipos de dos personas, desarrollamos un programa que incluye cinco de las diez opciones especificadas por el profesor. Al iniciar, el programa presentará un menú que permitirá seleccionar cualquiera de estas opciones.
 
-## Autores
+## Miembros del Equipo
 Denise Name
 Javier Tituaña
