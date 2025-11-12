@@ -16,6 +16,14 @@ public class Main {
 
         int seleccion = sc.nextInt();
 
+        while (seleccion < 1 || seleccion > 5){
+            System.out.println("Seleccion no valida, intentelo de nuevo");
+            seleccion = sc.nextInt();
+            if (seleccion == 1 || seleccion == 2 || seleccion == 3 || seleccion == 4 || seleccion == 5) {
+                break;
+            }
+        }
+
         if (seleccion == 1) {
             calculadora();
         } else if (seleccion == 2) {
@@ -153,6 +161,8 @@ public class Main {
 
     public static void contadorPalabras() {
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduzca una frase (o palabra):");
 
         String texto = sc.nextLine();
         int numCaracteres = texto.length();
