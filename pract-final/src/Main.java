@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class Main {
         } else if (seleccion == 4) {
             numeroRandom();
         } else {
-
+            contadorPalabras();
         }
 
     }
@@ -79,20 +80,60 @@ public class Main {
     public static void validadorCont() {
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Introduzca contraseña:");
+
         char ch;
         String password = sc.nextLine();
         int caracteres = password.length();
+        boolean mayuscula = false;
+        boolean minuscula = false;
+        boolean num = false;
 
-        for (int i = 0; i < caracteres; i++) {
-            ch = password.charAt(i);
-            if (!Character.isUpperCase(ch) && !Character.isLowerCase(ch)) {
-                System.out.println("Contraseña invalida, tiene que contener una mayuscula y una minuscula como minimo.");
+            if (caracteres < 8) {
+                System.out.println("Contraseña no valida, tiene que tener minimo 8 caracteres");
             }
+
+            for (int i = 0; i < caracteres; i++){
+                ch = password.charAt(i);
+                if (ch >= 'A' && ch <= 'Z') {
+                    mayuscula = true;
+                    break;
+                }
+            }
+
+            if (!mayuscula) {
+                System.out.println("Contraseña debil. Recomendamos minimo una mayuscula");
+            }
+
+            for (int i = 0; i < caracteres; i++){
+                ch = password.charAt(i);
+                if (ch >= 'a' && ch <= 'z') {
+                    minuscula = true;
+                    break;
+                }
+            }
+
+            if (!minuscula) {
+                System.out.println("Contraseña debil. Recomendamos minimo una minuscula");
+            }
+
+            for (int i = 0; i < caracteres; i++){
+                ch = password.charAt(i);
+                if (ch >= '0' && ch <= '9') {
+                    num = true;
+                    break;
+                }
+            }
+
+            if (!num) {
+                System.out.println("Contraseña debil. Recomendamos minimo un numero");
+            }
+
+
+        if (mayuscula && minuscula && num){
+            System.out.println("Contraseña fuerte.");
         }
 
-        if (caracteres >= 8) {
-            System.out.println("Contraseña aceptada");
-        }
     }
 
     public static void numeroRandom() {
@@ -112,8 +153,15 @@ public class Main {
 
     public static void contadorPalabras() {
         Scanner sc = new Scanner(System.in);
+
         String texto = sc.nextLine();
-        
+        int numCaracteres = texto.length();
+
+        String[] palabras = texto.split(" ");
+        int numPalabras = palabras.length;
+
+        System.out.println("Numero de caracteres:" + numCaracteres);
+        System.out.println("Numero de palabras: " + numPalabras);
     }
 }
 
